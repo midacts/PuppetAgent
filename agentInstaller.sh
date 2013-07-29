@@ -1,5 +1,5 @@
 #!/bin/bash
-# Puppet AgentInstall on Debian Wheezy
+# Puppet Agent Install on Debian Wheezy
 # Author: John McCarthy
 # Date: July 25, 2013
 #
