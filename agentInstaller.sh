@@ -44,7 +44,7 @@ function installPuppet()
 }
 function editPuppet()
 {
-	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf" file...\e[0m'
+	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 	echo -e "[main]
 logdir=/var/log/puppet
 vardir=/var/lib/puppet
