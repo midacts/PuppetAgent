@@ -78,42 +78,49 @@ function editCrontab()
 }
 function doAll()
 {
+	echo
 	echo -e '\e[33m=== Set Puppet Agent'\''s Hostname for Puppet Runs ? [RECOMMENDED] (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
 		setHostname
 	fi
 
+	echo
 	echo -e '\e[33m=== Set Puppet Master'\''s Hostname for Puppet Runs ? [RECOMMENDED] (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
 		setMasterHostname
 	fi
 
+	echo
 	echo -e '\e[33m=== Get Latest Puppet Repos ? (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
 		puppetRepos
 	fi
 
+	echo
 	echo -e '\e[33m=== Install Puppet Agent ? (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
 		installPuppet
 	fi
 
+	echo
 	echo -e '\e[33m=== Edit Puppet Configuration File ? (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
 		editPuppet
 	fi
 
+	echo
 	echo -e '\e[33m=== Enable Puppet Agent Service ? (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
 		enablePuppet
 	fi
 
+	echo
 	echo -e '\e[33m=== Enable Crontab file to auto-schedule Puppet Runs ? (y/n)\e[0m'
 	read yesno
 	if [ "$yesno" = "y" ]; then
@@ -126,9 +133,9 @@ function doAll()
 	echo
 	echo -e '\e[01;37mCheckout similar material at "midactstech.blogspot.com" and "github.com/Midacts" \e[0m'
 	echo
-	echo -e '                            \e[37m########################\e[0m'
-	echo -e '                            \e[37m#\e[0m \e[31mI Corinthians 15:1-4\e[0m \e[37m#\e[0m'
-	echo -e '                            \e[37m########################\e[0m'
+	echo -e '                            \e[01;37m########################\e[0m'
+	echo -e '                            \e[01;37m#\e[0m \e[31mI Corinthians 15:1-4\e[0m \e[01;37m#\e[0m'
+	echo -e '                            \e[01;37m########################\e[0m'
 	echo
 	echo
 	exit 0
