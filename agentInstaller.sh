@@ -13,7 +13,7 @@ function setHostname()
 	IP=`hostname -I`
 	Hostname=`hostname`
 	FQDN=`hostname -f`
-	echo -e "127.0.0.1	localhost		localhosts.localdomain\n$IP	$FQDN	$Hostname	puppet" > /etc/hosts
+	echo -e "127.0.0.1	localhost		localhosts.localdomain\n$IP	$FQDN	$Hostname" > /etc/hosts
 	echo -e '\e[1;37;42mThe Puppet Agent'\''s "/etc/hosts" file has been updated successfully!\e[0m'
 }
 function setMasterHostname()
@@ -44,6 +44,16 @@ function installPuppet()
 }
 function editPuppet()
 {
+	if [[ -z "$puppetFQDN" ]]
+	then
+        	echo -e '\e[33mWhat is your Puppet Master'\''s FQDN?\e[0m'
+        	read puppetFQDN
+	fi
+	if [[ -z "$FQDN" ]]
+	then
+        	echo -e '\e[33mWhat is your FQDN?\e[0m'
+        	read FQDN
+	fi
 	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 	echo -e "[main]
 logdir=/var/log/puppet
