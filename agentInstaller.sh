@@ -6,8 +6,9 @@
 # Version 1.0
 #
 # To God only wise, be glory through Jesus Christ forever. Amen.
+#
 # Romans 16:27, I Corinthians 15:1-4
-#------------------------------------------------------
+#---------------------------------------------------------------
 ######## FUNCTIONS ########
 function setHostname()
 {
