@@ -1,7 +1,9 @@
 #!/bin/bash
 # Puppet Agent Install on Debian Wheezy
 # Author: John McCarthy
-# Date: July 25, 2013
+# <http://www.midactstech.blogspot.com> <https://www.github.com/Midacts>
+# Date: 25th of July, 2013
+# Version 1.0
 #
 # To God only wise, be glory through Jesus Christ forever. Amen.
 # Romans 16:27, I Corinthians 15:1-4
@@ -26,7 +28,7 @@ function setMasterHostname()
 	echo -e '\e[33mWhat is your Puppet Master'\''s hostname?\e[0m'
 	read puppetHostname
 	echo -e "$puppetIP	$puppetFQDN	$puppetHostname	puppet" >> /etc/hosts
-	echo -e '\e[1;37;42mThe Puppet Master'\''s DNS information has been successfully added to the "/etc/hosts" file!\e[0m'
+	echo -e '\e[1;37;42mSuccessfully added the Puppet Master to your /etc/hosts file!\e[0m'
 }
 function puppetRepos()
 {
@@ -55,6 +57,7 @@ function editPuppet()
         	read FQDN
 	fi
 	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
+	echo
 	echo -e "[main]
 logdir=/var/log/puppet
 vardir=/var/lib/puppet
@@ -83,7 +86,8 @@ function enablePuppet()
 function editCrontab()
 {
 	echo -e '\e[33m+++ Editing the Crontab file...\e[0m'
-	echo '0,30 * * * * puppet agent --test' >> /var/spool/cron/crontabs/root	
+	echo '0,30 * * * * puppet agent --test' >> /var/spool/cron/crontabs/root
+	echo
 	echo -e '\e[1;37;42mThe Crontab file has been successfully edited!\e[0m'
 }
 function doAll()
@@ -155,9 +159,9 @@ function doAll()
 # Welcome to the script
 echo
 echo
-echo -e '              \e[01;37;42mWelcome to Midacts Mystery'\''s Puppet Agent Installer!\e[0m'
+echo -e '                \e[01;37;42mWelcome to Midacts Mystery'\''s Puppet Agent Installer!\e[0m'
 echo
-echo -e '                \e[00;31;40m!!! Do not forget to edit your DNS settings !!!\e[0m'
+echo -e '                    \e[00;31;40m!!! Do not forget to edit your DNS settings !!!\e[0m'
 echo
 ####### MENU #######
 case "$go" in
