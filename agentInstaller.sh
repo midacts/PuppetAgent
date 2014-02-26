@@ -58,15 +58,14 @@ function editPuppet()
 	fi
 	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 	echo
-	echo -e "[main]
+cat <<EOA> /root/test
+[main]
 logdir=/var/log/puppet
 vardir=/var/lib/puppet
 ssldir=/var/lib/puppet/ssl
 rundir=/var/run/puppet
-factpath=$vardir/lib/facter
-templatedir=$confdir/templates
-#prerun_command=/etc/puppet/etckeeper-commit-pre
-#postrun_command=/etc/puppet/etckeeper-commit-post
+factpath=\$vardir/lib/facter
+templatedir=\$confdir/templates
 server = $puppetFQDN
 report = true
 pluginsync = true
@@ -74,7 +73,9 @@ certname = $FQDN
 
 [master]
 ssl_client_header = SSL_CLIENT_S_DN
-ssl_client_verify_header = SSL_CLIENT_VERIFY" > /etc/puppet/puppet.conf
+ssl_client_verify_header = SSL_CLIENT_VERIFY
+EOA
+
 	echo -e '\e[1;37;42mThe "/etc/puppet/puppet.conf" file has been successfully edited!\e[0m'
 }
 function enablePuppet()
