@@ -2,8 +2,8 @@
 # Puppet Agent Install on Debian Wheezy
 # Author: John McCarthy
 # <http://www.midactstech.blogspot.com> <https://www.github.com/Midacts>
-# Date: 25th of July, 2013
-# Version 1.0
+# Date: 26th of February, 2014
+# Version 1.1
 #
 # To God only wise, be glory through Jesus Christ forever. Amen.
 # Romans 16:27, I Corinthians 15:1-4
@@ -58,7 +58,7 @@ function editPuppet()
 	fi
 	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 	echo
-cat <<EOA> /root/test
+cat <<EOA> /etc/puppet/puppet.conf
 [main]
 logdir=/var/log/puppet
 vardir=/var/lib/puppet
