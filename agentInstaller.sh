@@ -15,7 +15,7 @@ function setHostname()
 	IP=`hostname -I`
 	Hostname=`hostname`
 	FQDN=`hostname -f`
-	echo -e "127.0.0.1	localhost		localhosts.localdomain\n$IP	$FQDN	$Hostname" > /etc/hosts
+	echo -e "127.0.0.1	localhost		localhosts.localdomain	$FQDN\n$IP	$FQDN	$Hostname" > /etc/hosts
 	echo -e '\e[1;37;42mThe Puppet Agent'\''s "/etc/hosts" file has been updated successfully!\e[0m'
 }
 function setMasterHostname()
