@@ -48,12 +48,12 @@ function editPuppet()
 {
 	if [[ -z "$puppetFQDN" ]]
 	then
-        	echo -e '\e[33mWhat is your Puppet Master'\''s FQDN?\e[0m'
+        	echo -e '\e[33mWhat is your \e[01;33mPuppet Master'\''s\e[0m \e[33mFQDN?\e[0m'
         	read puppetFQDN
 	fi
 	if [[ -z "$FQDN" ]]
 	then
-        	echo -e '\e[33mWhat is your FQDN?\e[0m'
+        	echo -e '\e[33mWhat is \e[01;33mTHIS Puppet AGENT'\''s\e[0m \e[33mFQDN?\e[0m'
         	read FQDN
 	fi
 	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
