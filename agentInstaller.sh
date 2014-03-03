@@ -60,7 +60,6 @@ function editPuppet()
 	echo
 cat <<EOA> /etc/puppet/puppet.conf
 [main]
-listen=true
 logdir=/var/log/puppet
 vardir=/var/lib/puppet
 ssldir=/var/lib/puppet/ssl
