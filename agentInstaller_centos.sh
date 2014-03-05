@@ -78,12 +78,12 @@ EOA
 }
 function enablePuppet()
 {
-	echo -e '\e[01;34m+++ Enabling Puppet Master Service...\e[0m'
+	echo -e '\e[01;34m+++ Enabling Puppet Service...\e[0m'
 	puppet resource service puppet ensure=running enable=true
 
 	# Configures puppet to start
 	sed -i 's/START=no/START=yes/g' /etc/default/puppet
-	echo -e '\e[1;37;42mThe Puppet Master Service has been initiated!\e[0m'
+	echo -e '\e[1;37;42mThe Puppet Service has been initiated!\e[0m'
 }
 function editCrontab()
 {
