@@ -38,7 +38,7 @@ function puppetRepos()
 }
 function installPuppet()
 {
-	echo -e '\e[01;34m+++ Installing Puppet Master...\e[0m'
+	echo -e '\e[01;34m+++ Installing Puppet Agent...\e[0m'
 	yum install puppet -y
 	echo -e '\e[1;37;42mThe Puppet Agent has been installed!\e[0m'
 }
