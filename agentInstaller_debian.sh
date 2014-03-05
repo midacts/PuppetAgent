@@ -32,7 +32,7 @@ function setMasterHostname()
 }
 function puppetRepos()
 {
-	echo -e '\e[33m+++ Getting repositories...\e[0m'
+	echo -e '\e[01;34m+++ Getting repositories...\e[0m'
 	wget http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
 	dpkg -i puppetlabs-release-wheezy.deb
 	apt-get update
@@ -40,7 +40,7 @@ function puppetRepos()
 }
 function installPuppet()
 {
-	echo -e '\e[33m+++ Installing Puppet Master...\e[0m'
+	echo -e '\e[01;34m+++ Installing Puppet Master...\e[0m'
 	apt-get install puppet -y
 	echo -e '\e[1;37;42mThe Puppet Agent has been installed!\e[0m'
 }
@@ -56,7 +56,7 @@ function editPuppet()
         	echo -e '\e[33mWhat is \e[01;33mTHIS Puppet AGENT'\''s\e[0m \e[33mFQDN?\e[0m'
         	read FQDN
 	fi
-	echo -e '\e[33m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
+	echo -e '\e[01;34m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 	echo
 cat <<EOA> /etc/puppet/puppet.conf
 [main]
@@ -80,7 +80,7 @@ EOA
 }
 function enablePuppet()
 {
-	echo -e '\e[33m+++ Enabling Puppet Master Service...\e[0m'
+	echo -e '\e[01;34m+++ Enabling Puppet Master Service...\e[0m'
 	puppet resource service puppet ensure=running enable=true
 
 	# Configures puppet to start
@@ -89,7 +89,7 @@ function enablePuppet()
 }
 function editCrontab()
 {
-	echo -e '\e[33m+++ Editing the Crontab file...\e[0m'
+	echo -e '\e[01;34m+++ Editing the Crontab file...\e[0m'
 	echo '0,30 * * * * puppet agent --test' >> /var/spool/cron/crontabs/root
 	echo
 	echo -e '\e[1;37;42mThe Crontab file has been successfully edited!\e[0m'
