@@ -163,9 +163,9 @@ function doAll()
 # Welcome to the script
 echo
 echo
-echo -e '                \e[01;37;42mWelcome to Midacts Mystery'\''s Puppet Agent Installer!\e[0m'
+echo -e '              \e[01;37;42mWelcome to Midacts Mystery'\''s Puppet Agent Installer!\e[0m'
 echo
-echo -e '                    \e[00;31;40m!!! Do not forget to edit your DNS settings !!!\e[0m'
+echo -e '                \e[00;31;40m!!! Do not forget to edit your DNS settings !!!\e[0m'
 echo
 ####### MENU #######
 case "$go" in
