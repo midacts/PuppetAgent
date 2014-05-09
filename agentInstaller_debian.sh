@@ -144,6 +144,8 @@ function doAll()
 	if [ "$yesno" = "y" ]; then
 		editCrontab
 	fi
+	
+	clear
 	echo
 	echo
 	echo -e '          \e[01;37;42mWell done! you have completed your Puppet Agent Installation!\e[0m'
