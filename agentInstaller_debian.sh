@@ -144,7 +144,7 @@ function doAll()
 	if [ "$yesno" = "y" ]; then
 		editCrontab
 	fi
-	
+
 	clear
 	echo
 	echo
