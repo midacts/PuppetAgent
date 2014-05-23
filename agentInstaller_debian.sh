@@ -21,6 +21,7 @@ function setHostname()
 function setMasterHostname()
 {
 # /etc/hosts
+	echo
 	echo -e '\e[33mWhat is the IP of your Puppet Master?\e[0m'
 	read puppetIP
 	echo -e '\e[33mWhat is your Puppet Master'\''s FQDN?\e[0m'
@@ -32,6 +33,7 @@ function setMasterHostname()
 }
 function puppetRepos()
 {
+	echo
 	echo -e '\e[01;34m+++ Getting repositories...\e[0m'
 	wget http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
 	dpkg -i puppetlabs-release-wheezy.deb
@@ -40,6 +42,7 @@ function puppetRepos()
 }
 function installPuppet()
 {
+	echo
 	echo -e '\e[01;34m+++ Installing Puppet Agent...\e[0m'
 	apt-get install puppet -y
 	echo -e '\e[1;37;42mThe Puppet Agent has been installed!\e[0m'
@@ -56,8 +59,8 @@ function editPuppet()
         	echo -e '\e[33mWhat is \e[01;33mTHIS Puppet AGENT'\''s\e[0m \e[33mFQDN?\e[0m'
         	read FQDN
 	fi
-	echo -e '\e[01;34m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 	echo
+	echo -e '\e[01;34m+++ Editing "/etc/puppet/puppet.conf"...\e[0m'
 cat <<EOA> /etc/puppet/puppet.conf
 [main]
 logdir=/var/log/puppet
@@ -65,7 +68,6 @@ vardir=/var/lib/puppet
 ssldir=/var/lib/puppet/ssl
 rundir=/var/run/puppet
 factpath=\$vardir/lib/facter
-templatedir=\$confdir/templates
 server = $puppetFQDN
 report = true
 pluginsync = true
@@ -80,6 +82,7 @@ EOA
 }
 function enablePuppet()
 {
+	echo
 	echo -e '\e[01;34m+++ Enabling Puppet Service...\e[0m'
 	puppet resource service puppet ensure=running enable=true
 
@@ -89,6 +92,7 @@ function enablePuppet()
 }
 function editCrontab()
 {
+	echo
 	echo -e '\e[01;34m+++ Editing the Crontab file...\e[0m'
 	echo '0,30 * * * * puppet agent --test' >> /var/spool/cron/crontabs/root
 	echo
@@ -163,6 +167,7 @@ function doAll()
 # Check privileges
 [ $(whoami) == "root" ] || die "You need to run this script as root."
 # Welcome to the script
+clear
 echo
 echo
 echo -e '              \e[01;37;42mWelcome to Midacts Mystery'\''s Puppet Agent Installer!\e[0m'
