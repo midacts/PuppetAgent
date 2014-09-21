@@ -159,6 +159,7 @@ function doAll()
 # Check privileges
 [ $(whoami) == "root" ] || die "You need to run this script as root."
 # Welcome to the script
+clear
 echo
 echo
 echo -e '                \e[01;37;42mWelcome to Midacts Mystery'\''s Puppet Agent Installer!\e[0m'
