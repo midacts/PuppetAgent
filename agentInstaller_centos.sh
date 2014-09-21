@@ -63,7 +63,6 @@ vardir=/var/lib/puppet
 ssldir=/var/lib/puppet/ssl
 rundir=/var/run/puppet
 factpath=\$vardir/lib/facter
-templatedir=\$confdir/templates
 server = $puppetFQDN
 report = true
 pluginsync = true
