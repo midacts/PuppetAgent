@@ -76,6 +76,9 @@ certname = $FQDN
 [master]
 ssl_client_header = SSL_CLIENT_S_DN
 ssl_client_verify_header = SSL_CLIENT_VERIFY
+
+[agent]
+runinterval = 30m
 EOA
 
 	echo -e '\e[1;37;42mThe "/etc/puppet/puppet.conf" file has been successfully edited!\e[0m'
