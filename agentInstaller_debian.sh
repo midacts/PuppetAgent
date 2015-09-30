@@ -35,8 +35,8 @@ function puppetRepos()
 {
 	echo
 	echo -e '\e[01;34m+++ Getting repositories...\e[0m'
-	wget http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
-	dpkg -i puppetlabs-release-wheezy.deb
+	wget http://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb
+	dpkg -i puppetlabs-release-pc1-jessie.deb
 	apt-get update
 	echo -e '\e[1;37;42mThe Latest Puppet Repos have been acquired!\e[0m'
 }
